@@ -1,0 +1,48 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.61.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 74dfc490b1c87ff5125b9169b75704bc25f7cddd Changes
+SHA1 63fd52c7f04ecd3374a182c98896d8895c0c8b07 Changes.ttl
+SHA1 ff9a682b76a36c9a2f8b0b642882126c30d7a46d Changes.xml
+SHA1 34c43cddbd34b378dd68e9cb03e232e872ad0ce4 MANIFEST
+SHA1 28817ddce2c975015b983e0c5bfe5dfb9f44532a MANIFEST.SKIP
+SHA1 b225f325d5b4a86a1070730cd144c0e4e14695f1 META.yml
+SHA1 c9ce6ab88c84ef827f433247fed9ac2091f77990 Makefile.PL
+SHA1 41858fefd89840a9e535096d678095b40529de1c README
+SHA1 e5fb92ac217988bfc7a6af739b0459627020a27e inc/Module/AutoInstall.pm
+SHA1 fd5f3c4f0418efee3b9b16cf8c3902e8374909df inc/Module/Install.pm
+SHA1 5c529e96420d964b192f011b121283a4916f7331 inc/Module/Install/AutoInstall.pm
+SHA1 7cd7c349afdf3f012e475507b1017bdfa796bfbd inc/Module/Install/Base.pm
+SHA1 ba186541bbf6439111f01fc70769cf24d22869bf inc/Module/Install/Can.pm
+SHA1 a80bda1e4bcc807c60871bd4e4e0304388fa23db inc/Module/Install/DOAPChangeSets.pm
+SHA1 aaa50eca0d7751db7a4d953fac9bc72c6294e238 inc/Module/Install/Fetch.pm
+SHA1 219da5a95c290312a81477b226f005997d97dcfd inc/Module/Install/Include.pm
+SHA1 3e83972921d54198d1246f7278f08664006cd65d inc/Module/Install/Makefile.pm
+SHA1 12bf1867955480d47d5171a9e9c6a96fabe0b58f inc/Module/Install/Metadata.pm
+SHA1 a615bb050ca0b2d79bfa0224addcb83019a53b09 inc/Module/Install/ReadmeFromPod.pm
+SHA1 f7ee667e878bd2faf22ee9358a7b5a2cc8e91ba4 inc/Module/Install/Win32.pm
+SHA1 8ed29d6cf217e0977469575d788599cbfb53a5ca inc/Module/Install/WriteAll.pm
+SHA1 1e6399a0585817abef500c34fce676fb9b0545f0 inc/Test/Signature.pm
+SHA1 d2d7db11da80c83f313aa442945f8b02e34ce67f lib/XML/Atom/OWL.pm
+SHA1 bb128dce2db8ad397dbeb957d79d084cc5d2391a t/00sig.t
+SHA1 37ab48ecfd43df3754f6e186984e93bc74b7f807 t/01basic.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.10 (GNU/Linux)
+
+iEYEARECAAYFAktU4/QACgkQzr+BKGoqfTkkewCfcq8DUmCyXxMJ7JLkpAQ19mgN
+y/sAnj9REH6EyatINsQNA/mutlMWx3ZR
+=Ylgk
+-----END PGP SIGNATURE-----
