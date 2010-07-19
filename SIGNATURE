@@ -14,20 +14,20 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 84cc4052e91aea530a80491992b3da0faaf3404c Changes
-SHA1 08ea34489d424c44fbf33aeaaa9c0177f47fb78a Changes.ttl
-SHA1 b1302bb1eccd5015d620407ce3d627d4cb49f7c2 Changes.xml
+SHA1 88804e48d6b6ecbc08b4977b8d89c2b99060e021 Changes
+SHA1 8ada3f1f1d4c3d122feacec852351c6324e1d15c Changes.ttl
+SHA1 da39a3ee5e6b4b0d3255bfef95601890afd80709 Changes.xml
 SHA1 34c43cddbd34b378dd68e9cb03e232e872ad0ce4 MANIFEST
 SHA1 f5e0e1a1bb5bd5e30043a2123bf757fa648bedf8 MANIFEST.SKIP
-SHA1 5abc6e1a85959e998243eab66e2178e67e3cb305 META.yml
+SHA1 3643a3f07586ff929d824edbf2564c2487a86a73 META.yml
 SHA1 664f8fd10108ef4152e542329056580069e0af07 Makefile.PL
-SHA1 410c99845430264554c6d4dd3da17090ceb6f3bd README
+SHA1 e436c41a90fe08c72ad4d3437f5b0629ca0401d7 README
 SHA1 8842ca38ce27ccf75e1ce8f5dfb93fa62d933b2e inc/Module/AutoInstall.pm
 SHA1 1ebec4119486a032a5612a403e8d7b7be973e938 inc/Module/Install.pm
 SHA1 bec3c7f9af6e1a3cb4d143249956c98af30f0552 inc/Module/Install/AutoInstall.pm
 SHA1 24038af925a69df41972971356ccce885b0fe2ad inc/Module/Install/Base.pm
 SHA1 8f96eddfef548c9328457fbb17a121631cda356b inc/Module/Install/Can.pm
-SHA1 b19da2715a136aba51510f687a7b4e431e0a4bec inc/Module/Install/DOAPChangeSets.pm
+SHA1 b0f2d1c3f7c61133d8ea4ffed808adf9de13c0f6 inc/Module/Install/DOAPChangeSets.pm
 SHA1 ec29048e48edd9c9c55f9de7b773bd7c904335ad inc/Module/Install/Fetch.pm
 SHA1 01862227830d2547f38275eaee0eb9f5add5a252 inc/Module/Install/Include.pm
 SHA1 0384525d85d51e99532e3ad8729d870113646d14 inc/Module/Install/Makefile.pm
@@ -36,13 +36,13 @@ SHA1 a615bb050ca0b2d79bfa0224addcb83019a53b09 inc/Module/Install/ReadmeFromPod.p
 SHA1 5c25f1104c0038041e3b93e0660c39171e4caf2b inc/Module/Install/Win32.pm
 SHA1 94d47349c803c4bd2a9230d25e4db0b6aaf1acd8 inc/Module/Install/WriteAll.pm
 SHA1 1e6399a0585817abef500c34fce676fb9b0545f0 inc/Test/Signature.pm
-SHA1 a8373bc0da941d9eb6e850494d37e3454b1c4709 lib/XML/Atom/OWL.pm
+SHA1 b4e42659b4896be0e3006d773562d1e100f78244 lib/XML/Atom/OWL.pm
 SHA1 bb128dce2db8ad397dbeb957d79d084cc5d2391a t/00sig.t
 SHA1 37ab48ecfd43df3754f6e186984e93bc74b7f807 t/01basic.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.10 (GNU/Linux)
 
-iEYEARECAAYFAkvZ7o8ACgkQzr+BKGoqfTmtrQCdHxi0eqrUjH3lZCbka0O5GGVC
-zooAnjpqZs2bFBR107J/c+NLUXQVmskk
-=gYoo
+iEYEARECAAYFAkxECzAACgkQzr+BKGoqfTmKegCgm8979233Wu1JcRprh9D8wMnF
+44AAn1mQQC4M4Y5ONg9FMVBFD9ONvPRD
+=GDtQ
 -----END PGP SIGNATURE-----
