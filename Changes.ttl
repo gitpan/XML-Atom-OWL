@@ -77,7 +77,20 @@ my:v_0-100
 	dcs:changeset [
 		a dcs:ChangeSet ;
 		dcs:versus my:v_0-04 ;
-		dcs:item   [ rdfs:label "Automatically call 'consume' as required."@en ]
+		dcs:item   [ rdfs:label "Automatically call 'consume' as required."@en ] ;
+		dcs:item   [ rdfs:label "Switched to using common::sense instead of strict, but didn't note change in Makefile.PL/META.yml"@en ; a dcs:Regression ]
+		] .
+
+my:v_0-101
+
+	a               :Version ;
+	dc:issued       "2010-07-19"^^xsd:date ;
+	:revision       "0.101"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/XML-Atom-OWL-0.101.tar.gz> ;
+	dcs:changeset [
+		a dcs:ChangeSet ;
+		dcs:versus my:v_0-100 ;
+		dcs:item   [ rdfs:label "Fix packaging error; Makefile.PL and META.yml didn't note dependency on common::sense."@en ; a dcs:Bugfix ]
 		] .
 
 #############################################################
@@ -98,7 +111,8 @@ my:project
 	:tester         toby:i ;
 	:created        "2010-01-15"^^xsd:date ;
 	:license        <http://dev.perl.org/licenses/> ;
-	:release        my:v_0-01 , my:v_0-02 , my:v_0-03 , my:v_0-04 , my:v_0-100 .
+	:release        my:v_0-01 , my:v_0-02 , my:v_0-03 , my:v_0-04 ,
+	                my:v_0-100 , my:v_0-101 .
 
 #############################################################
 
