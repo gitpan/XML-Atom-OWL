@@ -25,46 +25,42 @@ use HTTP::Link::Parser;
 use LWP::UserAgent;
 use MIME::Base64 qw(decode_base64);
 use RDF::Trine 0.112;
+use Scalar::Util qw(blessed);
 use URI;
 use URI::URL;
 use XML::LibXML qw(:all);
 
-use constant ATOM_NS =>  'http://www.w3.org/2005/Atom';
-use constant AWOL_NS =>  'http://bblfish.net/work/atom-owl/2006-06-06/#';
-use constant AX_NS =>    'http://buzzword.org.uk/rdf/atomix#';
-use constant FH_NS =>    'http://purl.org/syndication/history/1.0';
-use constant FOAF_NS =>  'http://xmlns.com/foaf/0.1/';
-use constant IANA_NS =>  'http://www.iana.org/assignments/relation/';
-use constant RDF_NS =>   'http://www.w3.org/1999/02/22-rdf-syntax-ns#';
+use constant ATOM_NS  => 'http://www.w3.org/2005/Atom';
+use constant AWOL_NS  => 'http://bblfish.net/work/atom-owl/2006-06-06/#';
+use constant AX_NS    => 'http://buzzword.org.uk/rdf/atomix#';
+use constant FH_NS    => 'http://purl.org/syndication/history/1.0';
+use constant FOAF_NS  => 'http://xmlns.com/foaf/0.1/';
+use constant IANA_NS  => 'http://www.iana.org/assignments/relation/';
+use constant RDF_NS   => 'http://www.w3.org/1999/02/22-rdf-syntax-ns#';
 use constant RDF_TYPE => 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type';
-use constant THR_NS =>   'http://purl.org/syndication/thread/1.0';
-use constant XSD_NS =>   'http://www.w3.org/2001/XMLSchema#';
+use constant THR_NS   => 'http://purl.org/syndication/thread/1.0';
+use constant XSD_NS   => 'http://www.w3.org/2001/XMLSchema#';
 
-=head1 VERSION
-
-0.100
-
-=cut
-
-our $VERSION = '0.101';
+our $VERSION = '0.102';
 
 =head1 DESCRIPTION
+
+This has a pretty similar interface to L<RDF::RDFa::Parser>.
 
 =head2 Constructor
 
 =over 4
 
-=item C<< $p = XML::Atom::OWL->new($xml, $baseuri, \%options, $storage) >>
+=item C<< new($xml, $baseuri, \%options, $storage) >>
 
 This method creates a new XML::Atom::OWL object and returns it.
 
-The $xml variable may contain an XML (Atom) string, an
-XML::LibXML::Document object, or undef. If a string, the document
-is parsed using XML::LibXML::Parser, which will throw an exception
-if it is not well-formed. XML::Atom::OWL does not catch the exception.
+The $xml variable may contain an XML (Atom) string, or an
+L<XML::LibXML::Document> object. If a string, the document is parsed
+using L<XML::LibXML>, which will throw an exception if it is not
+well-formed. XML::Atom::OWL does not catch the exception.
 
 The base URI is used to resolve relative URIs found in the document.
-If $xml was undef, the URI will be fetched using LWP::UserAgent.
 
 Currently only one option is defined, 'no_fetch_content_src', a boolean
 indicating whether <content src> URLs should be automatically fetched
@@ -100,7 +96,7 @@ sub new
 		$content = $response->decoded_content;
 	}
 
-	if (UNIVERSAL::isa($content, 'XML::LibXML::Document'))
+	if (blessed($content) and $content->isa('XML::LibXML::Document'))
 	{
 		($domtree, $content) = ($content, $content->toString);
 	}
@@ -129,7 +125,7 @@ sub new
 
 =over 4
 
-=item C<<$p->uri >>
+=item C<< uri >>
 
 Returns the base URI of the document being parsed. This will usually be the
 same as the base URI provided to the constructor.
@@ -183,7 +179,7 @@ sub uri
 	return $rv;
 }
 
-=item C<< $p->dom >>
+=item C<< dom >>
 
 Returns the parsed XML::LibXML::Document.
 
@@ -196,7 +192,7 @@ sub dom
 }
 
 
-=item C<< $p->graph >>
+=item C<< graph >>
 
 This method will return an RDF::Trine::Model object with all
 statements of the full graph.
@@ -219,7 +215,7 @@ sub graphs
 	return { $this->{'baseuri'} => $this->{RESULTS} };
 }
 
-=item C<< $p->root_identifier >>
+=item C<< root_identifier >>
 
 Returns the blank node or URI for the root element of the Atom
 document as an RDF::Trine::Node
@@ -242,7 +238,7 @@ sub root_identifier
 	}
 }
 
-=item C<< $p->set_callbacks(\%callbacks) >>
+=item C<< set_callbacks(\%callbacks) >>
 
 Set callback functions for the parser to call on certain events. These are only necessary if
 you want to do something especially unusual.
@@ -280,7 +276,7 @@ sub set_callbacks
 	return $this;
 }
 
-=item C<< $p->consume >>
+=item C<< consume >>
 
 The document is parsed. Triples extracted from the document are passed
 to the callbacks as each one is found; triples are made available in the
@@ -1038,7 +1034,7 @@ sub get_node_base
 			if $node->hasAttributeNS(XML_XML_NS, 'base');
 			
 		$node = $node->parentNode;
-		last unless UNIVERSAL::isa($node, 'XML::LibXML::Element');
+		last unless blessed($node) && $node->isa('XML::LibXML::Element');
 	}
 	
 	my $rv = url $this->uri; # document URI.
@@ -1402,7 +1398,7 @@ Please report any bugs to L<http://rt.cpan.org/>.
 
 =head1 SEE ALSO
 
-L<RDF::Trine>, L<RDF::RDFa::Parser>.
+L<RDF::Trine>, L<XML::Atom::FromOWL>.
 
 L<http://www.perlrdf.org/>.
 
@@ -1412,7 +1408,7 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 =head1 COPYRIGHT
 
-Copyright 2010 Toby Inkster
+Copyright 2010-2011 Toby Inkster
 
 This library is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
