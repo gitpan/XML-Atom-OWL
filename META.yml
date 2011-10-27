@@ -8,33 +8,44 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: 'Module::Install version 1.00'
+generated_by: 'Module::Install version 1.02'
+keywords:
+  - ActivityStrea.ms
+  - Atom
+  - AtomOWL
+  - Feed
+  - OWL
+  - RDF
+  - Syndication
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
+module_name: XML::Atom::OWL
 name: XML-Atom-OWL
 no_index:
   directory:
+    - examples
     - inc
     - t
+    - xt
 requires:
   Carp: 1.00
   DateTime: 0
   Encode: 0
-  HTTP::Link::Parser: 0.04
+  HTTP::Link::Parser: 0.100
   LWP::UserAgent: 0
   MIME::Base64: 0
-  RDF::Trine: 0.112
+  RDF::Trine: 0.135
   Scalar::Util: 0
   URI: 1.30
   URI::URL: 0
-  XML::LibXML: 1.60
+  XML::LibXML: 1.70
   common::sense: 0
-  perl: 5.8.0
+  perl: 5.10.0
 resources:
   bugtracker: http://rt.cpan.org/Dist/Display.html?Queue=XML-Atom-OWL
-  homepage: http://search.cpan.org/dist/XML-Atom-OWL/
+  homepage: https://metacpan.org/release/XML-Atom-OWL
   license: http://dev.perl.org/licenses/
-  repository: http://goddamn.co.uk/viewvc/perlmods/XML-Atom-OWL/
-version: 0.102
+  repository: http://goddamn.co.uk/svn-web/perlmods/browse/XML-Atom-OWL/
+version: 0.103
